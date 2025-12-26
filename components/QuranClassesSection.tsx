@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (index: number) => ({
     opacity: 1,
@@ -15,20 +15,17 @@ const cardVariants = {
 const cards = [
   {
     title: "Online Quran Classes for Kids",
-    desc:
-      "The “Basic Quran Reading Course for Kids” is specially designed for kids who are beginners…",
+    desc: "The “Basic Quran Reading Course for Kids” is specially designed for kids who are beginners…",
     img: "/quran.jpg",
   },
   {
     title: "Online Quran Classes for Adults",
-    desc:
-      "The “Basic Quran Reading Course for Adults” is suitable for both brothers and sisters…",
+    desc: "The “Basic Quran Reading Course for Adults” is suitable for both brothers and sisters…",
     img: "/quran.jpg",
   },
   {
     title: "Online Quran Classes for Females",
-    desc:
-      "This course is designed for Muslim sisters who want to enhance their Islamic knowledge…",
+    desc: "This course is designed for Muslim sisters who want to enhance their Islamic knowledge…",
     img: "/quran.jpg",
   },
 ];
@@ -40,7 +37,6 @@ export default function QuranClassesSection() {
       style={{ backgroundImage: "url('/bg-pattern.png')" }}
     >
       <div className="max-w-6xl mx-auto text-center px-5">
-
         {/* Top Text */}
         <p className="inline-block bg-yellow-400 px-4 py-1 rounded-md text-black font-semibold text-sm">
           FOR EVERY AGE GROUP
@@ -52,7 +48,8 @@ export default function QuranClassesSection() {
 
         <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
           Discover Quranic teachings online with personalized courses designed
-          for kids, adults and ladies, offering structured learning and an engaging experience.
+          for kids, adults and ladies, offering structured learning and an
+          engaging experience.
         </p>
 
         {/* Cards */}
@@ -82,9 +79,7 @@ export default function QuranClassesSection() {
                 </div>
               </div>
 
-              <p className="text-gray-600 px-6 pb-6 text-left">
-                {card.desc}
-              </p>
+              <p className="text-gray-600 px-6 pb-6 text-left">{card.desc}</p>
 
               <div className="bg-gray-100 hover:bg-yellow-400 transition duration-300 text-left px-6 py-3 font-semibold cursor-pointer">
                 Read More →
