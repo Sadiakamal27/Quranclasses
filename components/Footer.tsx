@@ -1,5 +1,6 @@
 import { MessageSquare, Globe, Phone, Mail } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -8,7 +9,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
           <div className="space-y-6">
-            <div className="shrink-0 transition-transform hover:scale-105 duration-300">
+            <Link
+              href="/"
+              className="shrink-0 transition-transform hover:scale-105 duration-300 block"
+            >
               <Image
                 src="/logo.png"
                 alt="Al Quran Logo"
@@ -16,7 +20,7 @@ export function Footer() {
                 height={120}
                 className="object-contain"
               />
-            </div>
+            </Link>
             <p className="text-gray-400 leading-relaxed">
               Providing a unique package of religious and modern education under
               one roof. Highly trained, experienced, and certified teachers at
@@ -29,36 +33,36 @@ export function Footer() {
             <h4 className="font-bold text-lg mb-6 text-white">Quick Links</h4>
             <ul className="space-y-3 text-gray-400">
               <li>
-                <a
-                  href="#courses"
-                  className="hover:text-[#009FC8] transition-colors"
+                <Link
+                  href="/#FeaturedCourses"
+                  className="hover:text-[#6abe54] transition-colors"
                 >
                   Featured Courses
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#about"
-                  className="hover:text-[#009FC8] transition-colors"
+                <Link
+                  href="/#top"
+                  className="hover:text-[#6abe54] transition-colors"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#testimonials"
-                  className="hover:text-[#009FC8] transition-colors"
+                <Link
+                  href="/#reviews"
+                  className="hover:text-[#6abe54] transition-colors"
                 >
                   Testimonials
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#faq"
-                  className="hover:text-[#009FC8] transition-colors"
+                <Link
+                  href="/#how-to-enroll"
+                  className="hover:text-[#6abe54] transition-colors"
                 >
-                  Common Questions
-                </a>
+                  How to Enroll
+                </Link>
               </li>
             </ul>
           </div>
@@ -68,24 +72,36 @@ export function Footer() {
             <h4 className="font-bold text-lg mb-6 text-white">Our Programs</h4>
             <ul className="space-y-3 text-gray-400">
               <li>
-                <a href="#" className="hover:text-[#009FC8] transition-colors">
+                <Link
+                  href="/#FeaturedCourses"
+                  className="hover:text-[#6abe54] transition-colors"
+                >
                   Noorani Qaida
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-[#009FC8] transition-colors">
+                <Link
+                  href="/#FeaturedCourses"
+                  className="hover:text-[#6abe54] transition-colors"
+                >
                   Quran Reading
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-[#009FC8] transition-colors">
+                <Link
+                  href="/#FeaturedCourses"
+                  className="hover:text-[#6abe54] transition-colors"
+                >
                   Tajweed Mastery
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-[#009FC8] transition-colors">
+                <Link
+                  href="/#FeaturedCourses"
+                  className="hover:text-[#6abe54] transition-colors"
+                >
                   Hifz Program
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

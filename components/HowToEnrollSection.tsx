@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Button } from "./ui/button";
 
 const steps = [
   {
@@ -29,7 +30,7 @@ const steps = [
 
 export default function HowToEnrollSection() {
   return (
-    <section className="py-20 bg-[#0b3654]">
+    <section id="how-to-enroll" className="py-20 bg-gradient-to-r from-[#6abe54] to-[#0f6132] ">
       <div className="max-w-6xl mx-auto text-center px-5">
         <p className="inline-block bg-yellow-400 px-4 py-1 rounded-md text-black font-semibold text-sm">
           3 SIMPLE STEPS
@@ -62,12 +63,12 @@ export default function HowToEnrollSection() {
                 duration-500
                 hover:shadow-xl
                 hover:bg-gradient-to-br
-                hover:from-[#4DD4F0]
-                hover:to-[#009FC8]
+                hover:from-[#6abe54]
+                hover:to-[#0f6132]
                 active:shadow-xl
                 active:bg-gradient-to-br
-                active:from-[#4DD4F0]
-                active:to-[#009FC8]
+                active:from-[#6abe54]
+                active:to-[#0f6132]
               "
             >
               <div className="flex justify-between items-start">
@@ -92,9 +93,9 @@ export default function HowToEnrollSection() {
                 {step.desc}
               </p>
 
-              <button className="mt-6 gradient-gold text-white font-bold cursor-pointer px-6 py-2 rounded-md transition hover:bg-yellow-500">
+              <Button className="mt-6 bg-gradient-to-r from-[#6abe54] to-[#0f6132] text-white font-bold px-6 py-2 rounded-md transition hover:bg-yellow-500">
                 {step.btn}
-              </button>
+              </Button>
             </motion.div>
           ))}
         </div>

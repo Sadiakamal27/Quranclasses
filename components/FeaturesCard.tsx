@@ -22,7 +22,7 @@ const FeaturesCard = () => {
 
   return (
     <div className="container mx-auto px-4 -mt-12 relative z-20">
-      <div className="bg-gradient-to-r from-[#4DD4F0] via-[#1AC5E8] to-[#009FC8] rounded-2xl shadow-xl p-4 md:p-6 max-w-6xl mx-auto">
+      <div className="bg-gradient-to-r from-[#6abe54] via-[#3a9043] to-[#0f6132] rounded-2xl shadow-xl p-4 md:p-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
           {features.map((feature, index) => (
             <div key={index} className="flex items-center gap-4 group">

@@ -1,13 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Phone, Mail, Menu, X, ChevronDown } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { Phone, Mail, Menu, X } from "lucide-react";
 import Image from "next/image";
-import { span } from "framer-motion/client";
+import Link from "next/link";
 
 export function Header() {
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,44 +20,44 @@ export function Header() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    {
-      name: "Courses",
-      id: "courses",
-      items: [
-        { name: "Quran Reading Course", href: "#quran-reading" },
-        { name: "Tajweed Course", href: "#tajweed" },
-        { name: "Quran Memorization", href: "#memorization" },
-        { name: "Arabic Language", href: "#arabic" },
-      ],
-    },
-    {
-      name: "Quran Classes",
-      id: "quran-classes",
-      items: [
-        { name: "Kids Classes", href: "#kids" },
-        { name: "Adult Classes", href: "#adults" },
-        { name: "Sisters Classes", href: "#sisters" },
-        { name: "Weekend Classes", href: "#weekend" },
-      ],
-    },
-    {
-      name: "About",
-      id: "about",
-      items: [
-        { name: "About Us", href: "#about-us" },
-        { name: "Our Teachers", href: "#teachers" },
-        { name: "Testimonials", href: "#testimonials" },
-      ],
-    },
-    { name: "Fee & Schedule", href: "#fee-schedule" },
-    { name: "Contact Us", href: "#contact" },
+    { name: "ہوم", nameEn: "Home", href: "#top" },
+    { name: "خصوصیات", nameEn: "Features", href: "#FeaturedCourses" },
+    { name: "کیوں پڑھیں", nameEn: "Why Study", href: "#why-study" },
+    { name: "جائزے", nameEn: "Reviews", href: "#reviews" },
+    { name: "داخلہ", nameEn: "How to Enroll", href: "#how-to-enroll" },
+    { name: "بلاگ", nameEn: "Blog", href: "#blog" },
   ];
+
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    if (href.startsWith("#")) {
+      if (pathname === "/") {
+        e.preventDefault();
+        const element = document.querySelector(href);
+        if (element) {
+          const offset = 100; // Offset for fixed header
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+          setIsMobileMenuOpen(false);
+        }
+      } else {
+        // Let the default Link behavior or <a> behavior happen with absolute path
+        // but we need to ensure the href is /#...
+      }
+    }
+  };
 
   return (
     <>
       {/* Moving Admission Ticker - Fixed at very top */}
-      <div className="fixed top-0 left-0 right-0 z-[100] bg-[#009FC8] h-8 flex items-center overflow-hidden">
+      <div className="fixed top-0 left-0 right-0 z-[100] bg-gradient-to-r from-[#6abe54] to-[#0f6132] h-8 flex items-center overflow-hidden">
         <div className="animate-marquee inline-block whitespace-nowrap">
           <p className="text-white font-extrabold text-sm md:text-base px-4 uppercase tracking-widest inline-block">
             Admissions Open 2026 &nbsp; • &nbsp; Admissions Open 2026 &nbsp; •
@@ -74,21 +76,21 @@ export function Header() {
             <div className="flex items-center justify-center gap-6 text-sm">
               <a
                 href="tel:+03052087083"
-                className="flex items-center gap-1 text-white hover:text-[#009FC8] transition-colors"
+                className="flex items-center gap-1 text-white hover:text-[#6abe54] transition-colors"
               >
                 <Phone className="w-3.5 h-3.5" />
                 <span className="text-xs">0305-2087083</span>
               </a>
               <a
                 href="tel:+03125545581"
-                className="flex items-center gap-1 text-white hover:text-[#009FC8] transition-colors"
+                className="flex items-center gap-1 text-white hover:text-[#6abe54] transition-colors"
               >
                 <Phone className="w-3.5 h-3.5" />
                 <span className="text-xs">0312-5545581</span>
               </a>
               <a
                 href="mailto:info@alquranclassesonline.com"
-                className="flex items-center gap-1 text-white hover:text-[#009FC8] transition-colors"
+                className="flex items-center gap-1 text-white hover:text-[#6abe54] transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" />
                 <span className="text-xs">info@alquranclassesonline.com</span>
@@ -98,22 +100,22 @@ export function Header() {
         </div>
       </div>
 
-      {/* Black Navigation Bar - Sticky/Fixed */}
+      {/* Navigation Bar - Sticky/Fixed */}
       <header
         className={`fixed left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
           isScrolled ? "top-0 pt-2 mt-8" : "top-8 lg:top-20 pt-4"
         }`}
       >
-        {/* Black Navigation Container */}
+        {/* Navigation Container */}
         <div
           className={`transition-all duration-300 ${
             isScrolled
-              ? "py-1 mt-0 rounded-xl lg:max-w-[80%] shadow-md"
-              : "py-1 md:py-2 rounded-xl lg:max-w-[70%] shadow-lg"
+              ? "py-1 mt-0 rounded-xl lg:max-w-[90%] shadow-md"
+              : "py-1 md:py-2 rounded-xl lg:max-w-[85%] shadow-lg"
           } bg-white text-black px-3 sm:px-4 md:px-6 flex items-center justify-between mx-2 sm:mx-4 md:mx-6 lg:mx-auto overflow-hidden`}
         >
           {/* Logo */}
-          <div className="flex items-center shrink-0">
+          <Link href="/" className="flex items-center shrink-0">
             <div className="text-xl md:text-2xl font-bold flex items-center">
               <Image
                 src="/logo.png"
@@ -123,62 +125,37 @@ export function Header() {
                 className="object-contain md:w-[80px]"
               />
             </div>
-          </div>
+          </Link>
 
-          {/* Navigation Links - Centered (Desktop) */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-4 flex-1 justify-center">
-            {navLinks.map((link) =>
-              link.items ? (
-                <div
-                  key={link.id}
-                  className="relative group"
-                  onMouseEnter={() => setActiveDropdown(link.id || null)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  <button className="hover:text-[#009FC8] transition-colors flex items-center gap-1 px-2 py-1 text-sm xl:text-base">
-                    {link.name}
-                    <ChevronDown className="w-3 h-3 opacity-50" />
-                  </button>
-                  {activeDropdown === link.id && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 bg-white text-black shadow-xl rounded-lg overflow-hidden animate-fadeIn border border-gray-100 pb-2">
-                      <div className="h-1 bg-gradient-to-r from-[#1AC5E8] to-[#009FC8]" />
-                      {link.items.map((item) => (
-                        <a
-                          key={item.href}
-                          href={item.href}
-                          className="block px-4 py-3 text-sm hover:bg-gray-50 hover:text-[#8b7325] transition-colors border-b border-gray-50 last:border-0"
-                        >
-                          {item.name}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="hover:text-[#009FC8] transition-colors px-2 py-1 text-sm xl:text-base whitespace-nowrap"
-                >
-                  {link.name}
-                </a>
-              )
-            )}
+          {/* Navigation Links - Desktop */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-3 flex-1 justify-center">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={pathname === "/" ? link.href : `/${link.href}`}
+                onClick={(e) => scrollToSection(e, link.href)}
+                className="hover:text-[#0f6132] transition-colors px-2 py-1 text-xs xl:text-sm whitespace-nowrap font-semibold"
+              >
+                {link.nameEn}
+              </Link>
+            ))}
           </nav>
 
-          {/* CTA & Mobile Toggle */}
+          {/* CTA Button & Mobile Toggle */}
           <div className="flex items-center gap-4">
             <div className="animated-button-wrapper hidden sm:block shrink-0">
-              <button className="animated-button gradient-gold text-white font-semibold px-3 md:px-5 py-1.5 md:py-2 rounded-md relative text-sm md:text-base">
-                <span className="relative z-10 whitespace-nowrap">
-                  Get Started
-                </span>
-              </button>
+              <Link href="/get-started">
+                <button className="animated-button gradient-gold text-white font-semibold px-3 md:px-5 py-1.5 md:py-2 rounded-md relative text-sm md:text-base font-sans">
+                  <span className="relative z-10 whitespace-nowrap">
+                    Get Started
+                  </span>
+                </button>
+              </Link>
             </div>
 
             {/* Mobile Menu Toggle */}
             <button
-              className="lg:hidden p-2 text-black hover:text-[#009FC8] transition-colors"
+              className="lg:hidden p-2 text-black hover:text-[#6abe54] transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -211,43 +188,33 @@ export function Header() {
           >
             <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
-                <div key={link.name} className="flex flex-col gap-3">
-                  {link.items ? (
-                    <>
-                      <span className="text-[#009FC8] text-xs font-bold uppercase tracking-widest opacity-50">
-                        {link.name}
-                      </span>
-                      {link.items.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className="text-white text-lg font-medium hover:text-[#009FC8] transition-colors"
-                        >
-                          {item.name}
-                        </a>
-                      ))}
-                    </>
-                  ) : (
-                    <a
-                      href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-white text-2xl font-bold hover:text-[#009FC8] transition-colors"
-                    >
-                      {link.name}
-                    </a>
-                  )}
-                </div>
+                <Link
+                  key={link.href}
+                  href={pathname === "/" ? link.href : `/${link.href}`}
+                  onClick={(e) => scrollToSection(e, link.href)}
+                  className="text-white text-xl font-bold hover:text-[#6abe54] transition-colors font-jameel-noori"
+                >
+                  {link.name}
+                </Link>
               ))}
 
               <div className="mt-8">
-                <button className="w-full gradient-gold text-black font-bold py-4 rounded-xl shadow-lg active:scale-95 transition-transform">
-                  Get Started
-                </button>
+                <Link
+                  href="/get-started"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <button className="w-full gradient-gold text-black font-bold py-4 rounded-xl shadow-lg active:scale-95 transition-transform font-jameel-noori">
+                    ابھی شروع کریں
+                  </button>
+                </Link>
               </div>
             </div>
 
             <div className="mt-auto pt-10 flex flex-col gap-4 text-gray-400 text-sm">
+              <div className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-[#009FC8]" />
+                <span>0305-2087083</span>
+              </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#009FC8]" />
                 <span>0312-5545581</span>

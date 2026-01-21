@@ -13,44 +13,46 @@ import {
 
 export default function FeaturedCourses() {
   const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: false })
+    Autoplay({ delay: 5000, stopOnInteraction: false }),
   );
 
   const courses = [
     {
-      title: "Noorani Qaida",
+      title: "نورانی قاعدہ",
       image: "/noorani-qaida.jpg",
       description:
-        "Learning Noorani Qaida provides a solid foundation for your Quranic journey.",
+        "نورانی قاعدہ سیکھنا آپ کے قرآنic سفر کے لیے مضبوط بنیاد فراہم کرتا ہے۔",
     },
     {
-      title: "Tajweed ul Quran",
+      title: "تجوید القرآن",
       image: "/tajweed.jpg",
       description:
-        "Our internet based Tajweed classes take care of you. Gain from specialists.",
+        "ہماری آن لائن تجوید کلاسز آپ کی مکمل رہنمائی کرتی ہیں۔ ماہرین سے سیکھیں اور فائدہ اٹھائیں۔",
     },
     {
-      title: "Quran Reading",
+      title: "قرآن خوانی",
       image: "/quran-reading.jpg",
-      description:
-        "The Quran is the literal word of Allah, revealed to Prophet Muhammad SAW.",
+      description: "قرآن اللہ کا کلام ہے جو حضرت محمد ﷺ پر نازل ہوا۔",
     },
     {
-      title: "Quran Memorization",
+      title: "قرآن حفظ",
       image: "/quran-memorization.jpg",
       description:
-        "Considering the students' capabilities, we prefer personalized schedules",
+        "طلباء کی صلاحیتوں کو مدنظر رکھتے ہوئے، ہم ذاتی شیڈول کو ترجیح دیتے ہیں۔",
     },
     {
-      title: "Islamic Studies",
+      title: "اسلامی مطالعہ",
       image: "/islamic-studies.jpg",
       description:
-        "It is logical to think this way whenever someone suggests we learn more about Islam.",
+        "جب بھی کوئی ہمیں اسلام کے بارے میں مزید سیکھنے کا مشورہ دے، تو یہ منطقی سوچ ہے کہ ہمیں اسے قبول کرنا چاہیے۔",
     },
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 bg-[#fcfbf7] relative overflow-hidden">
+    <section
+      id="FeaturedCourses"
+      className="py-20 px-4 sm:px-6 bg-[#fcfbf7] relative overflow-hidden"
+    >
       {/* Background Islamic Mandala Patterns */}
       <div className="absolute top-0 left-0 w-80 h-80 opacity-[0.07] pointer-events-none -translate-x-1/4 -translate-y-1/4">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -123,25 +125,25 @@ export default function FeaturedCourses() {
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Yellow Badge */}
         <div className="text-center mb-6">
-          <span className="inline-block bg-yellow-400 px-4 py-1 rounded-md text-black font-semibold text-sm">
-            FEATURED COURSES
+          <span className="inline-block bg-yellow-400 font-jameel-noori px-4 py-1 rounded-md text-black font-semibold text-sm">
+            نمایاں کورسز
           </span>
         </div>
 
         {/* Main Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold  mb-6 tracking-tight leading-tight">
-            Online Quran Courses for Kids and Adults
+            بچوں اور بڑوں کے لیے آن لائن قرآنی کورسز
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed text-lg font-sans">
-            Explore our diverse selection of Quranic & Islamic Courses,
-            meticulously crafted to guide learners through a spiritual and
-            educational journey.
+          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed text-lg font-jameel-noori">
+            قرآنی اور اسلامی کورسز کے ہمارے متنوع انتخاب کو دریافت کریں، جو ایک
+            روحانی اور تعلیمی سفر میں سیکھنے والوں کی رہنمائی کے لیے احتیاط سے
+            تیار کیے گئے ہیں۔
           </p>
         </div>
 
         {/* Carousel */}
-        <div className="mt-12 px-2 sm:px-4 md:px-6 lg:px-10">
+        <div className="mt-12 px-2 sm:px-4 md:px-6 lg:px-10 font-jameel-noori">
           <Carousel
             plugins={[plugin.current]}
             opts={{

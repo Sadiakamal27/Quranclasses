@@ -22,7 +22,7 @@ export function Section2() {
                   className="w-full h-full object-cover"
                 />
                 {/* Badge overlay */}
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-[#1AC5E8] to-[#009FC8] text-white px-3 py-1 rounded-full text-xs font-semibold">
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-[#6abe54] to-[#0f6132] text-white px-3 py-1 rounded-full text-xs font-semibold">
                   Certified
                 </div>
               </div>
@@ -81,15 +81,16 @@ export function Section2() {
             {/* Salient Features List */}
             <div className="space-y-4 pt-4">
               {[
-                "Highly trained, experienced, and certified teachers",
-                "Daily class duration: more than 10 hours",
-                "Air-conditioned campus",
-                "Emphasis on cleanliness, discipline, and good manners",
-                "Along with Urdu & English, Islamic and modern education is also provided",
+                "بہترین، قابل اور تجربہ کار اساتذہ",
+                "فی کلاس زیادہ سے زیادہ  ۱۰  بچے",
+                "مار پیٹ سے پاک",
+                "ایئر کنڈیشنڈ کیمپس",
+                "صاف ستھرا، پر سکون اور کشاد و ماحول",
+                "اردو اور انگریزی کے ساتھ اسلامی اور جدید تعلیم بھی دی جاتی ہے۔",
               ].map((feature, idx) => (
                 <div key={idx} className="flex items-start gap-4 group">
                   <div className="shrink-0 mt-1">
-                    <div className="w-6 h-6 rounded-full bg-[#0D5F2B] flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="w-6 h-6 rounded-full bg-[#009FC8] flex items-center justify-center group-hover:scale-110 transition-transform">
                       <svg
                         width="14"
                         height="14"
@@ -105,7 +106,10 @@ export function Section2() {
                       </svg>
                     </div>
                   </div>
-                  <p className="text-lg text-gray-700 font-medium group-hover:text-gray-900 transition-colors">
+                  <p
+                    dir="rtl"
+                    className="font-jameel-noori text-2xl text-gray-700 font-medium group-hover:text-gray-900 transition-colors"
+                  >
                     {feature}
                   </p>
                 </div>
@@ -123,7 +127,7 @@ export function Section2() {
 
               {/* WhatsApp Button */}
               <div className="animated-button-wrapper-white w-full sm:w-auto">
-                <button className="animated-button cursor-pointer bg-white text-gray-900 font-semibold px-8 py-3 rounded-md relative border-2 border-gray-300 hover:border-[#009FC8] transition-colors w-full sm:w-auto">
+                <button className="animated-button cursor-pointer bg-white text-gray-900 font-semibold px-8 py-3 rounded-md relative border-2 border-gray-300 hover:border-[#6abe54] hover:text-[#0f6132] transition-colors w-full sm:w-auto">
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     <svg
                       className="w-5 h-5"
