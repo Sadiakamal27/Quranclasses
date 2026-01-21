@@ -40,7 +40,7 @@ export default function StatsCards() {
             onMouseLeave={() => setActiveCard(null)}
           >
             <div
-              className={`absolute inset-0 bg-[#009FC8] stats-card-bg transition-all duration-500 ${
+              className={`absolute inset-0 bg-gradient-to-r from-[#6abe54] to-[#0f6132] stats-card-bg transition-all duration-500 ${
                 activeCard === index ? "w-full" : "w-0 group-hover:w-full"
               }`}
             ></div>
@@ -50,7 +50,7 @@ export default function StatsCards() {
                 className={`text-4xl font-bold stats-card-text transition-colors ${
                   activeCard === index
                     ? "text-white"
-                    : "text-[#0D5F2B] group-hover:text-white"
+                    : "text-[#009FC8] group-hover:text-white"
                 }`}
               >
                 {card.number}
@@ -59,7 +59,7 @@ export default function StatsCards() {
                 className={`text-2xl font-semibold mt-1 stats-card-text transition-colors ${
                   activeCard === index
                     ? "text-white"
-                    : "text-[#0D5F2B] group-hover:text-white"
+                    : "text-[#009FC8] group-hover:text-white"
                 }`}
               >
                 {card.title}
