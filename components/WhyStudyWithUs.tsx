@@ -80,14 +80,14 @@ export function WhyStudyWithUs() {
         <div className="text-center mb-12">
           {/* Yellow Badge */}
           <div className="inline-block mb-4">
-            <span className="inline-block bg-yellow-400 px-4 py-1 rounded-md text-black font-semibold text-sm">
-              ہمارے معیار کے اصول
+            <span className="inline-block bg-yellow-400 px-4 py-1 rounded-md text-black font-semibold text-sm uppercase tracking-wider font-sans">
+              Our Quality Principles
             </span>
           </div>
 
           {/* Large Heading */}
-          <h2 className="text-4xl md:text-5xl font-bold text-white ">
-            ہمارے ساتھ کیوں مطالعہ کریں؟
+          <h2 className="text-4xl md:text-5xl font-bold text-white font-sans">
+            Why Study With Us?
           </h2>
         </div>
 

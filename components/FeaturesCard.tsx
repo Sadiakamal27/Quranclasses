@@ -29,7 +29,7 @@ const FeaturesCard = () => {
               <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shrink-0 shadow-inner group-hover:scale-110 transition-transform duration-300">
                 <feature.icon className="w-7 h-7 text-slate-700" />
               </div>
-              <div className="flex flex-col text-slate-900">
+              <div className="flex flex-col text-white">
                 <span className="text-lg md:text-xl font-bold leading-tight">
                   {feature.title}
                 </span>

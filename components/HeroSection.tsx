@@ -27,9 +27,9 @@ export function HeroSection() {
       </div>
 
       {/* HERO CONTENT - Aligned to the RIGHT */}
-      <div className="container font-jameel-noori mx-auto px-4 sm:px-6 md:px-20 lg:px-24 text-right relative z-10 mt-10">
+      <div className="container font-jameel-noori mx-auto px-4 sm:px-6 md:px-14 lg:px-18 text-right relative z-10 mt-10">
         <div className="flex justify-end">
-          <div className="max-w-3xl">
+          <div className="max-w-7xl w-full">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               مکمل نظامِ حفظِ قرآن <br /> اور جدید تعلیم
             </h1>
@@ -74,12 +74,18 @@ export function HeroSection() {
       </div>
 
       {/* Bottom Left Image */}
-      <div className="absolute bottom-0 left-0 z-20 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+      <div
+        className="absolute bottom-[-5rem]
+ left-0 md:left-10 lg:left-24 z-0 
+  w-96 h-96 
+  md:w-[28rem] md:h-[28rem] 
+  lg:w-[32rem] lg:h-[32rem]"
+      >
         <Image
           src="/bacha.png"
           alt="Hero decoration"
-          width={400}
-          height={400}
+          width={800}
+          height={800}
           className="w-full h-full object-contain"
           priority
         />

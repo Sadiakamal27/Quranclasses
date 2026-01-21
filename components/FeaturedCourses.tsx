@@ -125,15 +125,15 @@ export default function FeaturedCourses() {
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Yellow Badge */}
         <div className="text-center mb-6">
-          <span className="inline-block bg-yellow-400 font-jameel-noori px-4 py-1 rounded-md text-black font-semibold text-sm">
-            نمایاں کورسز
+          <span className="inline-block bg-yellow-400 px-4 py-1 rounded-md text-black font-semibold text-sm uppercase tracking-wider font-sans">
+            Featured Courses
           </span>
         </div>
 
         {/* Main Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold  mb-6 tracking-tight leading-tight">
-            بچوں اور بڑوں کے لیے آن لائن قرآنی کورسز
+        <div className="text-center mb-16 px-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight font-sans">
+            Online Quranic Courses for Children & Adults
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed text-lg font-jameel-noori">
             قرآنی اور اسلامی کورسز کے ہمارے متنوع انتخاب کو دریافت کریں، جو ایک
