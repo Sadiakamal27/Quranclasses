@@ -20,15 +20,8 @@ import {
   Calendar,
   Clock,
   AlertCircle,
- 
 } from "lucide-react";
 import Link from "next/link";
-import emailjs from "@emailjs/browser";
-
-// --- EmailJS Configuration ---
-const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
-const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
-const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
 export default function GetStartedPage() {
   const [formData, setFormData] = useState({
@@ -53,26 +46,15 @@ export default function GetStartedPage() {
     setSubmitStatus("idle");
 
     try {
-      const templateParams = {
-        studentName: formData.studentName,
-        parentName: formData.parentName,
-        email: formData.email,
-        phone: formData.phone,
-        age: formData.age,
-        course: formData.course,
-        preferredTime: formData.preferredTime,
-        message: formData.message,
-        to_name: "Al Quran Academy Admin",
-      };
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      const result = await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY,
-      );
-
-      if (result.status === 200) {
+      if (response.ok) {
         setSubmitStatus("success");
         // Reset form
         setFormData({
@@ -86,6 +68,8 @@ export default function GetStartedPage() {
           message: "",
         });
       } else {
+        const errorData = await response.json();
+        console.error("Submission error:", errorData);
         setSubmitStatus("error");
       }
     } catch (error) {
@@ -345,19 +329,20 @@ export default function GetStartedPage() {
             یا ہمیں براہ راست رابطہ کریں / Or contact us directly
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-sm">
-           <Link
-                  href="https://wa.me/+923005806700"
-                  target="_blank"
+            <Link
+              href="https://wa.me/+923005806700"
+              target="_blank"
               className="flex items-center gap-2 text-[#009FC8] hover:underline"
-                >
+            >
               <Phone className="w-4 h-4" />
               +92 300 5806700
             </Link>
-            <Link href="mailto:info@quraanhouse.com"
+            <Link
+              href="mailto:info@quraanhouse.com"
               className="flex items-center gap-2 text-[#009FC8] hover:underline"
             >
               <Mail className="w-4 h-4" />
-               info@quraanhouse.com
+              info@quraanhouse.com
             </Link>
           </div>
         </div>
