@@ -114,7 +114,7 @@ export function Header() {
           <Link href="/" className="flex items-center shrink-0">
             <div className="text-xl md:text-2xl font-bold flex items-center">
               <Image
-                src="/logo.png"
+                src="/logos/logo.png"
                 alt="Al Quran Logo"
                 width={70}
                 height={70}
