@@ -88,7 +88,7 @@ export default function FeaturedCourses() {
         </div>
 
         {/* Carousel */}
-        <div className="mt-12 px-2 sm:px-4 md:px-6 lg:px-10 font-jameel-noori">
+        <div className="mt-12 px-2 sm:px-4 md:px-6 lg:px-10 ">
           <Carousel
             plugins={[plugin.current]}
             opts={{
@@ -97,7 +97,7 @@ export default function FeaturedCourses() {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 sm:-ml-4">
+            <CarouselContent className="-ml-2 sm:-ml-4 ">
               {courses.map((course, index) => (
                 <CarouselItem
                   key={index}
@@ -142,7 +142,7 @@ export default function FeaturedCourses() {
                         {course.title}
                       </h3>
 
-                      <div className="mb-8">
+                      <div className="mb-8 ">
                         <div className="w-32 h-32 rounded-full p-1.5 bg-gradient-to-b from-[#d4af37] to-[#f3e5ab] shadow-inner overflow-hidden">
                           <div className="w-full h-full rounded-full overflow-hidden border-2 border-white">
                             <Image
@@ -156,8 +156,8 @@ export default function FeaturedCourses() {
                         </div>
                       </div>
 
-                      <div className="mb-8 flex-1">
-                        <p className="text-[#333] text-center text-sm leading-relaxed font-sans px-2">
+                      <div className="mb-8 flex-1 font-jameel-noori">
+                        <p className="text-[#333] text-center text-sm leading-relaxed  px-2">
                           {course.description}
                         </p>
                       </div>

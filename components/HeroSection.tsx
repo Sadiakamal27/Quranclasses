@@ -86,11 +86,11 @@ export function HeroSection() {
         whileInView={{ opacity: 1, scale: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.2 }}
-        className="absolute bottom-0 left-[-10%] sm:left-0 md:left-[2%] lg:left-[5%] z-0 
-          w-[22rem] h-[22rem] 
-          sm:w-[26rem] sm:h-[26rem]
-          md:w-[35rem] md:h-[35rem] 
-          lg:w-[48rem] lg:h-[48rem]"
+        className="absolute bottom-0 left-[-5%] sm:left-0 md:left-[2%] lg:left-[5%] z-0 
+          w-[16rem] h-[16rem] 
+          sm:w-[22rem] sm:h-[22rem]
+          md:w-[28rem] md:h-[28rem] 
+          lg:w-[38rem] lg:h-[38rem]"
       >
         <Image
           src="/bacha.png"
