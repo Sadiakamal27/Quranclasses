@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export function HeroSection() {
   return (
@@ -27,10 +28,16 @@ export function HeroSection() {
       </div>
 
       {/* HERO CONTENT - Aligned to the RIGHT */}
-      <div className="container font-jameel-noori mx-auto px-4 sm:px-6 md:px-20 lg:px-24 text-right relative z-10 mt-10">
+      <div className="container font-jameel-noori mx-auto px-4 sm:px-6 md:px-14 lg:px-18 text-right relative z-10 mt-10">
         <div className="flex justify-end">
-          <div className="max-w-3xl">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-7xl w-full"
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               مکمل نظامِ حفظِ قرآن <br /> اور جدید تعلیم
             </h1>
 
@@ -69,21 +76,31 @@ export function HeroSection() {
                 <span>لچکدار وقت</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Bottom Left Image */}
-      <div className="absolute bottom-0 left-0 z-20 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8, x: -50 }}
+        whileInView={{ opacity: 1, scale: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="absolute bottom-0 left-[-10%] sm:left-0 md:left-[2%] lg:left-[5%] z-0 
+          w-[22rem] h-[22rem] 
+          sm:w-[26rem] sm:h-[26rem]
+          md:w-[35rem] md:h-[35rem] 
+          lg:w-[48rem] lg:h-[48rem]"
+      >
         <Image
           src="/bacha.png"
           alt="Hero decoration"
-          width={400}
-          height={400}
-          className="w-full h-full object-contain"
+          width={1000}
+          height={1000}
+          className="w-full h-full object-contain object-bottom"
           priority
         />
-      </div>
+      </motion.div>
     </section>
   );
 }

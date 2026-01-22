@@ -4,7 +4,11 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="bg-[#0b3654] text-white py-16 border-t border-white/5">
+    <footer className="
+  text-white py-16 border-t border-white/5
+  bg-[url('/quranhousef-bg.png')]
+  bg-cover bg-center bg-no-repeat
+">
       <div className="container mx-auto px-4 sm:px-6 md:px-20 lg:px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
@@ -13,15 +17,15 @@ export function Footer() {
               href="/"
               className="shrink-0 transition-transform hover:scale-105 duration-300 block"
             >
-              <Image
-                src="/logo.png"
-                alt="Al Quran Logo"
-                width={120}
-                height={120}
-                className="object-contain"
-              />
+                <Image
+                  src="/logos/footerlogo.svg"
+                  alt="Al Quran Logo"
+                  width={120}
+                  height={120}
+                  className="object-contain"
+                />
             </Link>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-white leading-relaxed">
               Providing a unique package of religious and modern education under
               one roof. Highly trained, experienced, and certified teachers at
               your service.
@@ -31,7 +35,7 @@ export function Footer() {
           {/* Quick Links */}
           <div className="lg:pl-8">
             <h4 className="font-bold text-lg mb-6 text-white">Quick Links</h4>
-            <ul className="space-y-3 text-gray-400">
+            <ul className="space-y-3 text-white">
               <li>
                 <Link
                   href="/#FeaturedCourses"
@@ -70,7 +74,7 @@ export function Footer() {
           {/* Training Programs */}
           <div>
             <h4 className="font-bold text-lg mb-6 text-white">Our Programs</h4>
-            <ul className="space-y-3 text-gray-400">
+            <ul className="space-y-3 text-white">
               <li>
                 <Link
                   href="/#FeaturedCourses"
@@ -109,17 +113,23 @@ export function Footer() {
           {/* Contact Section */}
           <div>
             <h4 className="font-bold text-lg mb-6 text-white">Contact Us</h4>
-            <ul className="space-y-4 text-gray-400">
+            <ul className="space-y-4 text-white">
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#009FC8]" />
                 <div className="flex flex-col">
-                  <span>0305-2087083</span>
-                  <span>0312-5545581</span>
+                 <Link
+                  href="https://wa.me/+923005806700"
+                  target="_blank"
+                  className="w-full sm:w-auto"
+                >
+                <span>+92 300 5806700</span>
+              </Link>
+                  
                 </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#009FC8]" />
-                <span className="break-all">info@alquranclassesonline.com</span>
+                <span className="break-all"> info@quraanhouse.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <Globe className="w-5 h-5 text-[#009FC8]" />
@@ -129,7 +139,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white text-sm">
           <p>
             &copy; {new Date().getFullYear()} Al Quran Classes Online. All
             rights reserved.

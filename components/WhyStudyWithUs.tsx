@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 import {
   Globe,
   Clock,
@@ -73,37 +75,47 @@ export function WhyStudyWithUs() {
   return (
     <section
       id="why-study"
-      className="py-20 px-6 bg-gradient-to-r from-[#6abe54] to-[#0f6132]  font-jameel-noori"
+      className="py-20 px-6 bg-gradient-to-r from-[#6abe54] to-[#0f6132]  font-jameel-noori overflow-hidden"
     >
       <div className="container mx-auto max-w-7xl">
         {/* Headings */}
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
           {/* Yellow Badge */}
           <div className="inline-block mb-4">
-            <span className="inline-block bg-yellow-400 px-4 py-1 rounded-md text-black font-semibold text-sm">
-              ہمارے معیار کے اصول
+            <span className="inline-block bg-yellow-400 px-4 py-1 rounded-md text-black font-semibold text-sm uppercase tracking-wider font-sans">
+              Our Quality Principles
             </span>
           </div>
 
           {/* Large Heading */}
-          <h2 className="text-4xl md:text-5xl font-bold text-white ">
-            ہمارے ساتھ کیوں مطالعہ کریں؟
+          <h2 className="text-4xl md:text-5xl font-bold text-white font-sans">
+            Why Study With Us?
           </h2>
-        </div>
+        </motion.div>
 
         {/* 3x3 Grid of Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="quality-card bg-white rounded-lg p-6 shadow-lg transition-all duration-300 ease-out cursor-pointer"
               >
                 <div className="flex items-start gap-4">
                   {/* Icon on Left */}
                   <div className="shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#6abe54] to-[#0f6132] flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1AC5E8] to-[#009FC8] flex items-center justify-center">
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
                   </div>
@@ -118,7 +130,7 @@ export function WhyStudyWithUs() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

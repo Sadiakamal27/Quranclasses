@@ -10,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { motion } from "framer-motion";
 
 export default function Reviews() {
   const plugin = React.useRef(
@@ -50,7 +51,13 @@ export default function Reviews() {
   return (
     <section id="reviews" className="py-16 bg-[#F5F7F6]">
       {/* Heading */}
-      <div className="text-center mb-12">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="text-center mb-12"
+      >
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
           Parents/Students Reviews
         </h2>
@@ -58,7 +65,7 @@ export default function Reviews() {
           What our students and parents say about our online Quran classes and
           Teachers
         </p>
-      </div>
+      </motion.div>
 
       {/* Carousel */}
       <div className="max-w-7xl mx-auto px-6 relative">
@@ -76,7 +83,11 @@ export default function Reviews() {
                 key={i}
                 className="basis-full md:basis-1/2 lg:basis-1/3"
               >
-                <div
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="
                     bg-white border 
                     rounded-2xl shadow-md 
@@ -122,7 +133,7 @@ export default function Reviews() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </CarouselItem>
             ))}
           </CarouselContent>

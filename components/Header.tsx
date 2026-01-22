@@ -74,27 +74,23 @@ export function Header() {
         <div className="container mx-auto">
           <div className="bg-transparent px-6 mt-5">
             <div className="flex items-center justify-center gap-6 text-sm">
-              <a
-                href="tel:+03052087083"
-                className="flex items-center gap-1 text-white hover:text-[#6abe54] transition-colors"
-              >
+              <Link
+                  href="https://wa.me/+923005806700"
+                  target="_blank"
+                                  className="flex items-center gap-1 text-white hover:text-[#6abe54] transition-colors"
+
+                >
                 <Phone className="w-3.5 h-3.5" />
-                <span className="text-xs">0305-2087083</span>
-              </a>
-              <a
-                href="tel:+03125545581"
-                className="flex items-center gap-1 text-white hover:text-[#6abe54] transition-colors"
-              >
-                <Phone className="w-3.5 h-3.5" />
-                <span className="text-xs">0312-5545581</span>
-              </a>
-              <a
-                href="mailto:info@alquranclassesonline.com"
+                <span className="text-xs">+92 300 5806700</span>
+              </Link>
+             
+              <Link
+                href="mailto:info@quraanhouse.com"
                 className="flex items-center gap-1 text-white hover:text-[#6abe54] transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" />
-                <span className="text-xs">info@alquranclassesonline.com</span>
-              </a>
+                <span className="text-xs"> info@quraanhouse.com</span>
+              </Link>
             </div>
           </div>
         </div>

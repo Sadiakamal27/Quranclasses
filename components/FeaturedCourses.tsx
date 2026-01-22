@@ -11,6 +11,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import { motion } from "framer-motion";
+
 export default function FeaturedCourses() {
   const plugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: false }),
@@ -55,85 +57,28 @@ export default function FeaturedCourses() {
     >
       {/* Background Islamic Mandala Patterns */}
       <div className="absolute top-0 left-0 w-80 h-80 opacity-[0.07] pointer-events-none -translate-x-1/4 -translate-y-1/4">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path
-            fill="#8b7325"
-            d="M100 0c55.23 0 100 44.77 100 100s-44.77 100-100 100S0 155.23 0 100 44.77 0 100 0zm0 20c-44.18 0-80 35.82-80 80s35.82 80 80 80 80-35.82 80-80-35.82-80-80-80zM100 40c33.14 0 60 26.86 60 60s-26.86 60-60 60-60-26.86-60-60 26.86-60 60-60zm0 20c-22.09 0-40 17.91-40 40s17.91 40 40 40 40-17.91 40-40-17.91-40-40-40z"
-          />
-          <path
-            fill="#8b7325"
-            d="M100 10l5 15h15l-12 9 5 15-13-10-13 10 5-15-12-9h15z"
-            transform="rotate(0 100 100)"
-          />
-          <path
-            fill="#8b7325"
-            d="M100 10l5 15h15l-12 9 5 15-13-10-13 10 5-15-12-9h15z"
-            transform="rotate(45 100 100)"
-          />
-          <path
-            fill="#8b7325"
-            d="M100 10l5 15h15l-12 9 5 15-13-10-13 10 5-15-12-9h15z"
-            transform="rotate(90 100 100)"
-          />
-          <path
-            fill="#8b7325"
-            d="M100 10l5 15h15l-12 9 5 15-13-10-13 10 5-15-12-9h15z"
-            transform="rotate(135 100 100)"
-          />
-          <path
-            fill="#8b7325"
-            d="M100 10l5 15h15l-12 9 5 15-13-10-13 10 5-15-12-9h15z"
-            transform="rotate(180 100 100)"
-          />
-          <path
-            fill="#8b7325"
-            d="M100 10l5 15h15l-12 9 5 15-13-10-13 10 5-15-12-9h15z"
-            transform="rotate(225 100 100)"
-          />
-          <path
-            fill="#8b7325"
-            d="M100 10l5 15h15l-12 9 5 15-13-10-13 10 5-15-12-9h15z"
-            transform="rotate(270 100 100)"
-          />
-          <path
-            fill="#8b7325"
-            d="M100 10l5 15h15l-12 9 5 15-13-10-13 10 5-15-12-9h15z"
-            transform="rotate(315 100 100)"
-          />
-        </svg>
-      </div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 opacity-[0.07] pointer-events-none translate-x-1/4 translate-y-1/4">
-        <svg
-          viewBox="0 0 200 200"
-          xmlns="http://www.w3.org/2000/svg"
-          className="rotate-180"
-        >
-          <path
-            fill="#8b7325"
-            d="M100 0c55.23 0 100 44.77 100 100s-44.77 100-100 100S0 155.23 0 100 44.77 0 100 0zm0 20c-44.18 0-80 35.82-80 80s35.82 80 80 80 80-35.82 80-80-35.82-80-80-80zM100 40c33.14 0 60 26.86 60 60s-26.86 60-60 60-60-26.86-60-60 26.86-60 60-60zm0 20c-22.09 0-40 17.91-40 40s17.91 40 40 40 40-17.91 40-40-17.91-40-40-40z"
-          />
-        </svg>
+        {/* SVG content... */}
       </div>
 
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `url("https://www.transparenttextures.com/patterns/p6.png")`,
-        }}
-      ></div>
-
-      <div className="container mx-auto max-w-7xl relative z-10">
+      {/* Main Content with Reveal Animation */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="container mx-auto max-w-7xl relative z-10"
+      >
         {/* Yellow Badge */}
         <div className="text-center mb-6">
-          <span className="inline-block bg-yellow-400 font-jameel-noori px-4 py-1 rounded-md text-black font-semibold text-sm">
-            نمایاں کورسز
+          <span className="inline-block bg-yellow-400 px-4 py-1 rounded-md text-black font-semibold text-sm uppercase tracking-wider font-sans">
+            Featured Courses
           </span>
         </div>
 
         {/* Main Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold  mb-6 tracking-tight leading-tight">
-            بچوں اور بڑوں کے لیے آن لائن قرآنی کورسز
+        <div className="text-center mb-16 px-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight font-sans">
+            Online Quranic Courses for Children & Adults
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed text-lg font-jameel-noori">
             قرآنی اور اسلامی کورسز کے ہمارے متنوع انتخاب کو دریافت کریں، جو ایک
@@ -158,7 +103,13 @@ export default function FeaturedCourses() {
                   key={index}
                   className="pl-2 sm:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 2xl:basis-1/5"
                 >
-                  <div className="relative group h-full transition-transform duration-300 hover:-translate-y-2 active:-translate-y-2 py-4">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="relative group h-full transition-transform duration-300 hover:-translate-y-2 active:-translate-y-2 py-4"
+                  >
                     {/* Dome Card Shape */}
                     <div
                       className="bg-[#fff9e5] relative pt-12 pb-8 px-6 flex flex-col items-center h-full shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-[#fef3c7] w-full max-w-[280px] mx-auto"
@@ -168,7 +119,7 @@ export default function FeaturedCourses() {
                           'path("M0,1000 L0,110 C0,30 50,0 120,0 C190,0 240,30 240,110 L240,1000 L0,1000 Z")',
                       }}
                     >
-                      {/* Top Emblem */}
+                      {/* Internal content... */}
                       <div className="mb-6">
                         <svg
                           width="40"
@@ -187,12 +138,10 @@ export default function FeaturedCourses() {
                         </svg>
                       </div>
 
-                      {/* Title */}
                       <h3 className="text-2xl font-bold text-[#1a1a1a] text-center mb-6 min-h-[64px] flex items-center leading-snug">
                         {course.title}
                       </h3>
 
-                      {/* Circular Image with Golden Border */}
                       <div className="mb-8">
                         <div className="w-32 h-32 rounded-full p-1.5 bg-gradient-to-b from-[#d4af37] to-[#f3e5ab] shadow-inner overflow-hidden">
                           <div className="w-full h-full rounded-full overflow-hidden border-2 border-white">
@@ -207,14 +156,12 @@ export default function FeaturedCourses() {
                         </div>
                       </div>
 
-                      {/* Description */}
                       <div className="mb-8 flex-1">
                         <p className="text-[#333] text-center text-sm leading-relaxed font-sans px-2">
                           {course.description}
                         </p>
                       </div>
 
-                      {/* Bottom Decorative Divider */}
                       <div className="w-full flex items-center justify-center gap-2 opacity-40">
                         <div className="h-[1px] w-8 bg-[#8b7325]"></div>
                         <div className="scale-75">
@@ -233,17 +180,16 @@ export default function FeaturedCourses() {
                         <div className="h-[1px] w-8 bg-[#8b7325]"></div>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </CarouselItem>
               ))}
             </CarouselContent>
 
-            {/* Navigation */}
             <CarouselPrevious className="hidden md:flex -left-2 lg:-left-4 bg-white border-[#ffc107] text-[#ffc107] hover:bg-[#ffc107] hover:text-white" />
             <CarouselNext className="hidden md:flex -right-2 lg:-right-4 bg-white border-[#ffc107] text-[#ffc107] hover:bg-[#ffc107] hover:text-white" />
           </Carousel>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
