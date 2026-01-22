@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 export default function StatsCards() {
@@ -28,8 +29,12 @@ export default function StatsCards() {
     <div className="w-full px-4 sm:px-6 md:px-8 overflow-x-hidden">
       <div className="flex flex-col lg:flex-row justify-center items-center gap-6 py-10 max-w-7xl mx-auto">
         {cards.map((card, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
             className={`group relative bg-gray-100 rounded-3xl px-8 py-8 w-full max-w-[320px] sm:w-[320px] shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl active:shadow-xl touch-manipulation ${
               activeCard === index ? "stats-card-active" : ""
             }`}
@@ -74,7 +79,7 @@ export default function StatsCards() {
                 {card.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

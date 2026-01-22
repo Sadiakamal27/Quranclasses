@@ -20,7 +20,9 @@ import {
   Calendar,
   Clock,
   AlertCircle,
+ 
 } from "lucide-react";
+import Link from "next/link";
 import emailjs from "@emailjs/browser";
 
 // --- EmailJS Configuration ---
@@ -343,27 +345,20 @@ export default function GetStartedPage() {
             یا ہمیں براہ راست رابطہ کریں / Or contact us directly
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <a
-              href="tel:+03052087083"
+           <Link
+                  href="https://wa.me/+923005806700"
+                  target="_blank"
               className="flex items-center gap-2 text-[#009FC8] hover:underline"
-            >
+                >
               <Phone className="w-4 h-4" />
-              0305-2087083
-            </a>
-            <a
-              href="tel:+03125545581"
-              className="flex items-center gap-2 text-[#009FC8] hover:underline"
-            >
-              <Phone className="w-4 h-4" />
-              0312-5545581
-            </a>
-            <a
-              href="mailto:info@alquranclassesonline.com"
+              +92 300 5806700
+            </Link>
+            <Link href="mailto:info@quraanhouse.com"
               className="flex items-center gap-2 text-[#009FC8] hover:underline"
             >
               <Mail className="w-4 h-4" />
-              info@alquranclassesonline.com
-            </a>
+               info@quraanhouse.com
+            </Link>
           </div>
         </div>
       </div>

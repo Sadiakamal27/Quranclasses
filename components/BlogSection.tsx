@@ -4,6 +4,7 @@ import { Calendar, User, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { motion } from "framer-motion";
 
 export function BlogSection() {
   const blogPosts = [
@@ -43,7 +44,13 @@ export function BlogSection() {
     <section id="blog" className="py-20 px-4 sm:px-6 bg-white">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
           <div className="inline-block mb-4">
             <span className="inline-block bg-yellow-400 px-4 py-1 rounded-md text-black font-semibold text-sm">
               BLOG
@@ -55,13 +62,17 @@ export function BlogSection() {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Helpful articles about Quranic education and Islamic knowledge
           </p>
-        </div>
+        </motion.div>
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
-            <article
+          {blogPosts.map((post, index) => (
+            <motion.article
               key={post.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group"
             >
               {/* Image */}
@@ -113,19 +124,25 @@ export function BlogSection() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center mt-12"
+        >
           <Button
             asChild
             className="bg-gradient-to-r from-[#6abe54] to-[#0f6132] text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all"
           >
             <Link href="/blog">View All Articles</Link>
           </Button>
-        </div> 
+        </motion.div>
       </div>
     </section>
   );

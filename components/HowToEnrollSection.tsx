@@ -30,27 +30,49 @@ const steps = [
 
 export default function HowToEnrollSection() {
   return (
-    <section id="how-to-enroll" className="py-20 bg-gradient-to-r from-[#6abe54] to-[#0f6132] ">
+    <section
+      id="how-to-enroll"
+      className="py-20 bg-gradient-to-r from-[#6abe54] to-[#0f6132] "
+    >
       <div className="max-w-6xl mx-auto text-center px-5">
-        <p className="inline-block bg-yellow-400 px-4 py-1 rounded-md text-black font-semibold text-sm">
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="inline-block bg-yellow-400 px-4 py-1 rounded-md text-black font-semibold text-sm"
+        >
           3 SIMPLE STEPS
-        </p>
+        </motion.p>
 
-        <h2 className="text-4xl md:text-5xl text-white font-bold mt-4">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-4xl md:text-5xl text-white font-bold mt-4"
+        >
           How to Enroll
-        </h2>
+        </motion.h2>
 
-        <p className="text-gray-300 mt-4 max-w-3xl mx-auto">
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-gray-300 mt-4 max-w-3xl mx-auto"
+        >
           Start learning Quran online in just three simple steps, bringing
           Quranic education closer to you through accessible online learning.
-        </p>
+        </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           {steps.map((step, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ delay: i * 0.3, duration: 0.6 }}
               className="
                 group
