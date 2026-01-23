@@ -39,7 +39,7 @@ export function Section2() {
               {/* Top Right Image */}
               <div className="relative rounded-lg overflow-hidden shadow-lg mt-8 aspect-square">
                 <Image
-                  src="/section2-2.jpeg"
+                  src="/section2 3.jpeg"
                   alt="Student learning"
                   width={300}
                   height={300}
@@ -50,7 +50,7 @@ export function Section2() {
               {/* Bottom Image - Spans full width */}
               <div className="relative rounded-lg overflow-hidden shadow-lg col-span-2 aspect-video md:aspect-[2/1] bg-gray-100">
                 <Image
-                  src="/section2-3.jpeg"
+                  src="/section2 2.jpeg"
                   alt="Students studying together"
                   width={800}
                   height={400}
