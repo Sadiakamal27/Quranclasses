@@ -23,7 +23,7 @@ const jameelNoori = localFont({
 
 export const metadata: Metadata = {
   title: "QuraanHouse",
-  description: "Learn Quran Online with Qualified Teachers",
+  description: "Learn Quran Onsite with Qualified Teachers",
 };
 
 export default function RootLayout({

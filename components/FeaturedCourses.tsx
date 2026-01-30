@@ -29,7 +29,7 @@ export default function FeaturedCourses() {
       title: "تجوید القرآن",
       image: "/tajweed.jpg",
       description:
-        "ہماری آن لائن تجوید کلاسز آپ کی مکمل رہنمائی کرتی ہیں۔ ماہرین سے سیکھیں اور فائدہ اٹھائیں۔",
+        "ہماری تجوید کلاسز آپ کی مکمل رہنمائی کرتی ہیں۔ ماہرین سے سیکھیں اور فائدہ اٹھائیں۔",
     },
     {
       title: "قرآن خوانی",
@@ -78,7 +78,7 @@ export default function FeaturedCourses() {
         {/* Main Heading */}
         <div className="text-center mb-16 px-4">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight font-sans">
-            Online Quranic Courses for Children & Adults
+            Onsite Quranic Courses for Children & Adults
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed text-lg font-jameel-noori">
             قرآنی اور اسلامی کورسز کے ہمارے متنوع انتخاب کو دریافت کریں، جو ایک

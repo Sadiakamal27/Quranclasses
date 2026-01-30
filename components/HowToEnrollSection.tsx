@@ -15,14 +15,14 @@ const steps = [
   {
     no: "02",
     title: "Schedule Trial Class",
-    desc: "Book your trial Quran class online today and embark on your learning journey with us!",
+    desc: "Book your trial Quran class today and embark on your learning journey with us!",
     btn: "Claim Free Lesson",
     icon: "/alquran-icon-2.svg",
   },
   {
     no: "03",
     title: "Start Learning Quran",
-    desc: "Begin your Quranic education today with our comprehensive online learning platform.",
+    desc: "Begin your Quranic education today with our comprehensive on-site learning platform.",
     btn: "Enroll Now",
     icon: "/alquran-icon-3.svg",
   },
@@ -62,8 +62,8 @@ export default function HowToEnrollSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-gray-300 mt-4 max-w-3xl mx-auto"
         >
-          Start learning Quran online in just three simple steps, bringing
-          Quranic education closer to you through accessible online learning.
+          Start learning Quran in just three simple steps, bringing
+          Quranic education closer to you through accessible on-site learning.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">

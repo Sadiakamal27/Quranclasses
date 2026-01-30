@@ -75,15 +75,14 @@ export function Header() {
           <div className="bg-transparent px-6 mt-5">
             <div className="flex items-center justify-center gap-6 text-sm">
               <Link
-                  href="https://wa.me/+923005806700"
-                  target="_blank"
-                                  className="flex items-center gap-1 text-white hover:text-[#6abe54] transition-colors"
-
-                >
+                href="https://wa.me/+923005806700"
+                target="_blank"
+                className="flex items-center gap-1 text-white hover:text-[#6abe54] transition-colors"
+              >
                 <Phone className="w-3.5 h-3.5" />
                 <span className="text-xs">+92 300 5806700</span>
               </Link>
-             
+
               <Link
                 href="mailto:info@quraanhouse.com"
                 className="flex items-center gap-1 text-white hover:text-[#6abe54] transition-colors"
@@ -217,7 +216,7 @@ export function Header() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#009FC8]" />
-                <span>info@alquranclassesonline.com</span>
+                <span>info@quraanhouse.com</span>
               </div>
             </div>
           </div>

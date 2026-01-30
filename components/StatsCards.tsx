@@ -10,7 +10,7 @@ export default function StatsCards() {
     {
       number: "10+",
       title: "Years",
-      description: "We Teach Quran Online for 10+ Years Worldwide.",
+      description: "We have been Teaching Quran on-site for 10+ Years Worldwide.",
     },
     {
       number: "650+",
