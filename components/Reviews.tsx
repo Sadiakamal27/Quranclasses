@@ -62,7 +62,7 @@ export default function Reviews() {
           Parents/Students Reviews
         </h2>
         <p className="text-gray-600 mt-2">
-          What our students and parents say about our online Quran classes and
+          What our students and parents say about our Quran classes and
           Teachers
         </p>
       </motion.div>

@@ -4,11 +4,13 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="
+    <footer
+      className="
   text-white py-16 border-t border-white/5
   bg-[url('/quranhousef-bg.png')]
   bg-cover bg-center bg-no-repeat
-">
+"
+    >
       <div className="container mx-auto px-4 sm:px-6 md:px-20 lg:px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
@@ -17,13 +19,13 @@ export function Footer() {
               href="/"
               className="shrink-0 transition-transform hover:scale-105 duration-300 block"
             >
-                <Image
-                  src="/logos/footerlogo.svg"
-                  alt="Al Quran Logo"
-                  width={120}
-                  height={120}
-                  className="object-contain"
-                />
+              <Image
+                src="/logos/footerlogo.svg"
+                alt="Al Quran Logo"
+                width={120}
+                height={120}
+                className="object-contain"
+              />
             </Link>
             <p className="text-white leading-relaxed">
               Providing a unique package of religious and modern education under
@@ -117,14 +119,13 @@ export function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#009FC8]" />
                 <div className="flex flex-col">
-                 <Link
-                  href="https://wa.me/+923005806700"
-                  target="_blank"
-                  className="w-full sm:w-auto"
-                >
-                <span>+92 300 5806700</span>
-              </Link>
-                  
+                  <Link
+                    href="https://wa.me/+923005806700"
+                    target="_blank"
+                    className="w-full sm:w-auto"
+                  >
+                    <span>+92 300 5806700</span>
+                  </Link>
                 </div>
               </li>
               <li className="flex items-center gap-3">
@@ -133,7 +134,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Globe className="w-5 h-5 text-[#009FC8]" />
-                <span>Available 24/7 Online</span>
+                <span>Available Onsite</span>
               </li>
             </ul>
           </div>
@@ -141,7 +142,7 @@ export function Footer() {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white text-sm">
           <p>
-            &copy; {new Date().getFullYear()} Al Quran Classes Online. All
+            &copy; {new Date().getFullYear()} Al Quran Classes Institution. All
             rights reserved.
           </p>
           <div className="flex gap-6">
