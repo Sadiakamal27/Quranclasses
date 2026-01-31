@@ -142,7 +142,7 @@ export function Footer() {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white text-sm">
           <p>
-            &copy; {new Date().getFullYear()} 2026 QuraanHouse. All
+            &copy; {new Date().getFullYear()} QuraanHouse. All
             rights reserved.
           </p>
           <div className="flex gap-6">
