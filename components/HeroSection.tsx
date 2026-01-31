@@ -51,13 +51,14 @@ export function HeroSection() {
                   Get Started
                 </Button>
               </Link>
-
+<Link href="#FeaturedCourses"
               <Button
                 variant="outline"
                 className="bg-white/10 text-white cursor-pointer border-2 border-gray-300 hover:bg-white hover:text-[#0f6132] hover:border-[#6abe54] backdrop-blur-sm font-sans"
               >
                 View Courses
               </Button>
+              </Link>
             </div>
 
             <div className="mt-12 flex flex-wrap justify-end gap-6 sm:gap-8 text-xs sm:text-sm">

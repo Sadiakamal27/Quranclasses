@@ -10,12 +10,12 @@ export default function StatsCards() {
     {
       number: "10+",
       title: "Years",
-      description: "We have been Teaching Quran on-site for 10+ Years Worldwide.",
+      description: "We have been Teaching Quran to the Local Community for 10+ Years.",
     },
     {
       number: "650+",
       title: "Students",
-      description: "In our Quran Academy we have 650+ satisfied students.",
+      description: "At QuraanHouse we have 650+ satisfied students.",
     },
     {
       number: "60+",

@@ -17,7 +17,7 @@ const FeaturesCard = () => {
     },
     {
       icon: Users,
-      title: "Onsite Quran Classes",
+      title: "Female Tutors",
       subtitle: "for Females",
     },
   ];

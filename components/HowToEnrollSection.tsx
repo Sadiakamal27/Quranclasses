@@ -9,20 +9,20 @@ const steps = [
     no: "01",
     title: "Choose Your Course",
     desc: "Select from a variety of Quranic courses tailored to empower your journey with us!",
-    btn: "Book Free Trial",
+    btn: "Contact Us",
     icon: "/alquran-icon-1.svg",
   },
   {
     no: "02",
-    title: "Schedule Trial Class",
-    desc: "Book your trial Quran class today and embark on your learning journey with us!",
-    btn: "Claim Free Lesson",
+    title: "Schedule  a Meeting",
+    desc: "Schedule a meeting or come to on-site office for further information to start admission process",
+    btn: "Get Started",
     icon: "/alquran-icon-2.svg",
   },
   {
     no: "03",
     title: "Start Learning Quran",
-    desc: "Begin your Quranic education today with our comprehensive on-site learning platform.",
+    desc: "Begin your Quranic education today with our comprehensive course catalogue",
     btn: "Enroll Now",
     icon: "/alquran-icon-3.svg",
   },
@@ -63,7 +63,7 @@ export default function HowToEnrollSection() {
           className="text-gray-300 mt-4 max-w-3xl mx-auto"
         >
           Start learning Quran in just three simple steps, bringing
-          Quranic education closer to you through accessible on-site learning.
+          Quranic education closer to you .
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
@@ -115,7 +115,7 @@ export default function HowToEnrollSection() {
                 {step.desc}
               </p>
 
-              <Button className="mt-6 bg-gradient-to-r from-[#6abe54] to-[#0f6132] text-white font-bold px-6 py-2 rounded-md transition hover:bg-yellow-500">
+              <Button className="mt-6 bg-gradient-to-r from-[#1AC5E8] to-[#009FC8] text-white font-bold px-6 py-2 rounded-md transition hover:bg-yellow-500">
                 {step.btn}
               </Button>
             </motion.div>
